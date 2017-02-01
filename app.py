@@ -32,7 +32,7 @@ def form():
             context['errors']['title'] = 'Title field must not be empty.'
 
         # Validate Author
-        if any(char.isdigit() for char in context['author']):
+        if not context['author'] or any(char.isdigit() for char in context['author']):
             context['errors']['author'] = 'Author name can not be empty or contain digits.'
 
         # Validate ISBN
