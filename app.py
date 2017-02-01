@@ -85,5 +85,6 @@ def books():
         SELECT b.title, a.name, b.isbn
         FROM book b INNER JOIN author a ON b.author_id = a.id;
     """)
-    context['books'] = [{'title': row[0], 'author': row[1], 'isbn': row[2]} for row in cursor.fetchall()]
+    context['books'] = [{'title': row[0], 'author': row[1], 'isbn': row[2]}
+                        for row in cursor.fetchall()]
     return render_template('books.html', **context)
