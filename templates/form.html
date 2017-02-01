@@ -1,0 +1,44 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3>My Library - Add new book</h3>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-12">
+                <form role="form" action="" method="POST">
+                    {% if message %}
+                        <h4 style="color: green;">{{message}}</h4>
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input class="form-control" name="title" placeholder="i.e: The Aleph" value="{{title}}">
+                        {% if errors.title %}
+                          <span style="color: red;">{{errors.title}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">Author</label>
+                        <input class="form-control" name="author" placeholder="i.e: Jorge Luis Borges" value="{{author}}">
+                        {% if errors.author %}
+                          <span style="color: red;">{{errors.author}}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label for="isbn">ISBN</label>
+                        <input class="form-control" name="isbn" placeholder="i.e: 1234567891234" value="{{isbn}}">
+                        {% if errors.isbn %}
+                          <span style="color: red;">{{errors.isbn}}</span>
+                        {% endif %}
+                    </div>
+                    <button type="submit" name='submit' class="btn btn-success" value="Form sent!">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
